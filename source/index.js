@@ -1,11 +1,16 @@
 const KKB = require("./kkb");
 const app = new KKB();
 
-app.use((req,res) => {
-    res.writeHead(200);
-    res.end("hi kaikeba");
+
+
+app.use(ctx =>{
+    ctx.body = 'mamamhhhh'
 })
 
-app.listen(3001,() => {
+
+
+//优雅api proxy代理对象 这里我们劫持了属性 
+
+app.listen(3000,() => {
     console.log('监听端口 3000')
 })
