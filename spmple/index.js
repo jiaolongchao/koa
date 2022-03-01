@@ -2,14 +2,14 @@ const Koa = require('koa');
 const app = new Koa();
 
 app.use(async (ctx,next) =>{
-    const start = new Date()
+    const start = Date.now()
     await next()
-    const end = new Date()
+    const end = Date.now()
     console.log(`请求${ctx.url}时间${end - start}`)
 })
 
 app.use((ctx,next) =>{
-    const expire = Date.now() + 100
+    const expire = Date.now() + 300
     while(Date.now() < expire)
     ctx.body = {
         name : "tom"
