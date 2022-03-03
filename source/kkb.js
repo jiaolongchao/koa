@@ -15,7 +15,7 @@ class KKB {
       // this.callback(req,res)
       const ctx = this.createContext(req, res)
       // this.callback(ctx)
-      const fn = this.compose(this.middlewares)
+      const fn = this.compose(this.middlewares) //组合函数
       await fn(ctx)
       //响应
       res.end(ctx.body)
